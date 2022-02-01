@@ -7,13 +7,15 @@ public class isSubSet {
         int k = 0,i=0,f=0;
         Arrays.sort(arr);
         Arrays.sort(sub_arr);
-        while (i<n){
+        while (i<n && k<s){
             if(sub_arr[k] == arr[i]) {
                 k++;
                 f++;
             }
             i++;
         }
+        if (f==s)
+            isPresent = true;
         return isPresent;
     }
     public static void main(String[] args) {
