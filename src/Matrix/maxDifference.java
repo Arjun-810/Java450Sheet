@@ -3,15 +3,14 @@ package Matrix;
 import java.util.Scanner;
 
 public class maxDifference {
-    public static int specificPair(int[][] mtrx, int r, int c) {
-        int diff= 0,max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
-        for (int i=0;i<r;i++)
-            for (int j=0;j<c;j++) {
-                max = Math.max(mtrx[i][j],max);
-                min = Math.min(mtrx[i][j],min);
-            }
-        diff = max-min;
-        return diff;
+    public static int specificPair(int[][] mtrx, int row, int col) {
+        int max = 0;
+        for (int a=0;a<row-1;a++)
+            for (int b=0;b<col-1;b++)
+                for (int c = a;c<row;c++)
+                    for (int d = b;d<col;d++)
+                        max = Math.max(max, mtrx[c][d]-mtrx[a][b]);
+        return max;
     }
     public static void main(String[] args) {
         System.out.println("Find a specific pair in Matrix");

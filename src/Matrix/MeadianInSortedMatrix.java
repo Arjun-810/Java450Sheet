@@ -1,12 +1,20 @@
 package Matrix;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MeadianInSortedMatrix {
     public static int medianInMatrix(int[][] mtr, int x, int y) {
-        int median = 0, mid = x*y/2;
-
-
+        int[] arr = new int[x*y];
+        int f = 0;
+        for (int i=0;i<x;i++)
+            for (int j=0;j<y;j++) {
+                arr[f] = mtr[i][j];
+                f++;
+            }
+        Arrays.sort(arr);
+        int mid = x*y/2;
+        int median = arr[mid];
         return median;
     }
     public static void main(String[] args) {
