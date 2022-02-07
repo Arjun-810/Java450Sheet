@@ -18,7 +18,7 @@ public class splitTwosubStrWitequal0And1 {
         int x = 0,y = 0;
         String str1 = "",str2 = "";
         for (int i=0;i<str.length();i++){
-            
+
         }
         System.out.println(str1);
         System.out.println(str2);
